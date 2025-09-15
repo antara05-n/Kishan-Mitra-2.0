@@ -1,0 +1,160 @@
+ :root {
+      --accent1: #2e7d32;
+      --accent2: #ffb300;
+      --muted: #666;
+      --compost-bg: #e8f5e9;   /* Light green for compost */
+      --pest-bg: #fff8e1;      /* Light yellow for pests */
+      --summary-bg: #e3f2fd;   /* Light blue for summary */
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background: #f8fdf8;
+      color: #222;
+      line-height: 1.5;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 16px 24px;
+      background: linear-gradient(90deg,#c8facc,#f0ffe6);
+      border-bottom: 1px solid #ddd;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mark {
+      background: var(--accent1);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 12px;
+      font-size: 18px;
+    }
+    .chip {
+      background: #eee;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+      padding: 24px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+    .row {
+      display: flex;
+      gap: 12px;
+    }
+    .half {
+      flex: 1;
+    }
+    .btn {
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      border: none;
+      padding: 10px 16px;
+      border-radius: 10px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn.secondary {
+      background: #fff;
+      border: 1px solid var(--accent1);
+      color: var(--accent1);
+    }
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .results {
+      display: grid;
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .resultCard {
+      border-radius: 12px;
+      padding: 14px;
+    }
+    .compostCard {
+      background: var(--compost-bg);
+    }
+    .pestCard {
+      background: var(--pest-bg);
+    }
+    .summaryCard {
+      background: var(--summary-bg);
+    }
+    .kpi {
+      display: flex;
+      gap: 20px;
+    }
+    .kpi .item {
+      flex: 1;
+    }
+    .kpi .value {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent1);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 30px;
+    }
+    .mic-btn {
+      position: fixed;
+      left: 24px;
+      bottom: 24px;
+      background: var(--accent1);
+      color: white;
+      padding: 18px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .mic-btn:hover {
+      background: #1b5e20;
+    }
+    .voice-status {
+      position: fixed;
+      left: 24px;
+      bottom: 95px;
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }

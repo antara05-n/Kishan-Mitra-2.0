@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Kishan Mitra</title>
+  
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <div class="mark">KM</div>
+        <div>
+          <h1>Kishan Mitra</h1>
+          <p class="lead">AI-driven crop recommendations • Multilingual Voice Assistant • Real-time soil sensing</p>
+        </div>
+      </div>
+      <div style="margin-left:auto" class="chip">Prototype</div>
+    </header>
+
+    <div class="grid">
+      <!-- Left Panel -->
+      <div>
+        <div class="card">
+          <h2>Crop & Soil Inputs</h2>
+          <div>
+            <label>State</label>
+            <select id="stateSelect"></select>
+          </div>
+          <div style="margin-top:10px">
+            <label>District</label>
+            <select id="districtSelect"></select>
+          </div>
+          <div style="margin-top:10px">
+            <label>Month</label>
+            <select id="monthSelect"></select>
+          </div>
+
+          <div class="row" style="margin-top:12px">
+            <div class="half">
+              <label>N (Nitrogen) - kg/ha</label>
+              <input id="nVal" type="number" value="80" />
+            </div>
+            <div class="half">
+              <label>P (Phosphorous) - kg/ha</label>
+              <input id="pVal" type="number" value="30" />
+            </div>
+          </div>
+          <div class="row" style="margin-top:12px">
+            <div class="half">
+              <label>K (Potassium) - kg/ha</label>
+              <input id="kVal" type="number" value="40" />
+            </div>
+            <div class="half">
+              <label>Soil pH</label>
+              <input id="phVal" type="number" step="0.1" value="6.5" />
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:10px;">
+            <button class="btn" id="analyzeBtn">Analyze & Recommend</button>
+            <button class="btn secondary" id="clearBtn">Reset</button>
+          </div>
+
+          <hr style="margin:14px 0;border:none;border-top:1px dashed #eee">
+
+          <label>Voice Language</label>
+          <select id="langSelect">
+            <option value="hi-IN" selected>हिन्दी (Hindi)</option>
+            <option value="en-IN">English (India)</option>
+            <option value="mr-IN">मराठी (Marathi)</option>
+            <option value="ta-IN">தமிழ் (Tamil)</option>
+            <option value="te-IN">తెలుగు (Telugu)</option>
+            <option value="bn-IN">বাংলা (Bengali)</option>
+            <option value="kn-IN">ಕನ್ನಡ (Kannada)</option>
+          </select>
+          <div class="muted" style="margin-top:10px">
+            Tip: Tap the mic (bottom-left), speak in your local language for inputs or crop queries.
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h3>Quick Tips</h3>
+          <ul>
+            <li>Use local language for better recognition.</li>
+            <li>Ensure sensor is placed 10–15 cm deep for accurate readings.</li>
+            <li>Adjust NPK values based on crop lifecycle stage.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right Panel -->
+      <div>
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <h2>Recommendations</h2>
+              <div class="muted">Best crops, compost & pest control</div>
+            </div>
+            <div style="text-align:right">
+              <div class="muted">Farm Score</div>
+              <div id="farmScore" style="font-size:22px;font-weight:800;color:var(--accent1)">—</div>
+            </div>
+          </div>
+
+          <div class="results">
+            <div class="resultCard">
+              <h3>Top Crops</h3>
+              <ul id="cropList"></ul>
+            </div>
+            <div class="resultCard compostCard">
+              <h3>Compost Suggestions</h3>
+              <ul id="compostList"></ul>
+            </div>
+            <div class="resultCard pestCard">
+              <h3>Pest & Disease</h3>
+              <ul id="pestList"></ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card summaryCard" style="margin-top:16px">
+          <h3>Summary</h3>
+          <div id="oneLine" style="margin-top:10px;font-weight:700;font-size:16px">—</div>
+
+          <div class="kpi" style="margin-top:12px">
+            <div class="item"><div class="muted">Temperature</div><div class="value" id="tempVal">—</div></div>
+            <div class="item"><div class="muted">Humidity</div><div class="value" id="humidityVal">—</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Built with ❤️ for farmers • Kishan Mitra prototype • Voice features depend on browser support
+    </footer>
+  </div>
+
+  <!-- Floating mic button -->
+  <div class="mic-btn" id="micBtn">🎙️</div>
+  <div class="voice-status" id="voiceStatus">Idle</div>
+  <script src="main.js"></script>
+ 
+</body>
+</html>
